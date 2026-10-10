@@ -20,23 +20,23 @@ while True:
         break
     elif opcion in ("1", "sin topping"):
         total_pedido += 1.90
-        print(">> Añadido: 1 Helado sin topping ($1.90).")
+        print("Elegiste 1 Helado sin topping ($1.90).")
     elif opcion in ("2", "frutas", "fruta"):
         total_pedido += 1.90 + 0.50
-        print(">> Añadido: 1 Helado con Topping de Frutas ($2.40).")
+        print("Elegiste 1 Helado con Topping de Frutas ($2.40).")
     elif opcion in ("3", "granola"):
         total_pedido += 1.90 + 1.50
-        print(">> Añadido: 1 Helado con Topping de Granola ($3.40).")
+        print("Elegiste 1 Helado con Topping de Granola ($3.40).")
     elif opcion in ("4", "oreo"):
         total_pedido += 1.90 + 1.00
-        print(">> Añadido: 1 Helado con Topping de Oreo ($2.90).")
+        print("Elegiste 1 Helado con Topping de Oreo ($2.90).")
     elif opcion in ("5", "brownie"):
         total_pedido += 1.90 + 0.75
-        print(">> Añadido: 1 Helado con Topping de Brownie ($2.65).")
+        print("Elegiste 1 Helado con Topping de Brownie ($2.65).")
     else:
-        print("⚠️ ¡Topping no disponible! Lo sentimos, ese topping no se encuentra en el menú.")
+        print("⚠️ ¡Paila! En que mundo vivis? Eso no existe aqui, elegi otra cosa o si no te vas")
 
 print("\n" + "=" * 45)
 print(f"Total a pagar por su pedido: ${total_pedido:.2f}")
-print("¡Muchas gracias por su compra! Que disfrute su helado.")
+print("¡Mi Dios le pague! Que lo disfrute y trabaje pa que me compre mas.")
 print("=" * 45)
