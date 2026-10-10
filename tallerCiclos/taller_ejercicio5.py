@@ -1,3 +1,11 @@
+'''
+Este script cumple con la peticion del quinto ejercicio del taller
+Simula el recorrido de un borracho en una ciudad cuadrada
+Mediante un ciclo for de 100 pasos, el borracho elige una dirección al azar (Norte, Sur, Este, Oeste) y se mueve en esa dirección
+Se imprime la dirección elegida y la posición actual del borracho después de cada paso
+Y luego mostramos donde fue que se echo a dormir.
+'''
+
 import random # Importamos el módulo random para poder elegir direcciones al azar
 
 # Inicializamos las coordenadas del borracho en el origen (0, 0) ***parido borracho

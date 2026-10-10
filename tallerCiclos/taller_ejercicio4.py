@@ -1,3 +1,11 @@
+'''
+Este script cumple con la peticion del cuarto ejercicio del taller
+Aqui usamos diccionarios que es como una forma de generar una tabla de datos
+Primero mediante un for analizamos el estudiante y su nota y luego mediante condicionales 
+Le damos una calificacion segun su nota y lo guardamos en otro diccionario
+En donde estara el nombre del estudiante como clave y la calificacion como valor.
+'''
+
 # Hacemos un diccionario con los nombres de los estudiantes y sus puntajes
 student_scores = {
     "Harry": 88,

@@ -1,3 +1,12 @@
+'''
+Este programa cumple con la peticion del primer ejercicio del taller.
+Se implementan algunas cosas interesantes como strip() que nunca lo hemos usadoy sirve para
+eliminar los espacios en blanco al inicio y al final de la cadena ingresada por el usuario,
+y lower() que convierte la cadena a minúsculas para que la comparación sea insensible a mayúsculas y minúsculas.
+
+De resto, es un ciclo while que se va a repetir hasta que el usuario diga, ya no quiero mas.
+'''
+
 total_pedido = 0
 
 print("=" * 45)
@@ -12,7 +21,8 @@ while True:
     print("4. Helado con Topping Oreo    -> $2.90 ($1.90 + $1.00)")
     print("5. Helado con Topping Brownie -> $2.65 ($1.90 + $0.75)")
     print("6. Terminar pedido y pagar")
-    
+
+    #Con strip() eliminamos los espacios en blanco al inicio y al final de la cadena ingresada por el usuario, y con lower() convertimos la cadena a minúsculas para que la comparación sea insensible a mayúsculas y minúsculas
     opcion = input("\nIngrese su opción o topping deseado: ").strip().lower()
     
     # Condición de salida del ciclo

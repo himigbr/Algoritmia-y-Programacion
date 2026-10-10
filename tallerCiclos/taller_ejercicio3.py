@@ -1,3 +1,12 @@
+'''
+Este script cumple con la peticion del tercer ejercicio del taller
+Es un poco complejo el entender los for anidados por la funcion range y el slicing (recortar)
+Lo que hace es que el primer for controla el tamaño de la subcadena que queremos generar, desde 1 hasta n (n+1) 
+Porque la funcion range es exclusiva del límite superior, osea que no lo toma en cuenta
+El for anidado va cambiando el indice de inicio de la subcadena para obtener todos los resultados
+Y la funcion append() agrega la subcadena generada a la lista de subcadenas.
+'''
+
 palabra = input("Ingrese una palabra: ").strip()
 n = len(palabra)
 subcadenas = []
