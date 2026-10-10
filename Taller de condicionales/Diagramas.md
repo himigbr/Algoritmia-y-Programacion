@@ -176,3 +176,44 @@ graph TD
 ```
 
 ---
+
+## Ejercicio 9
+
+Un instituto de enseñanza de inglés necesita un programa que le permita, cada día, procesar observaciones sobre las clases de ese día. El instituto dicta clases a estudiantes de distintos niveles y cada nivel tiene clases en un día de la semana diferente: los lunes se dicta el nivel inicial, los martes el nivel intermedio, los miércoles el nivel avanzado, los jueves son para práctica hablada y los viernes se dicta inglés para viajeros. Se debe comenzar por solicitar al usuario que ingrese la fecha actual en formato “día, DD/MM”, donde [día] es un día de la semana, DD es el número de día y MM es el número de mes. Si el usuario ingresa un día de la semana inexistente o una fecha cuyo día supere el número 31 o el mes supere el número 12, finalizar el programa indicando que se produjo un error. Debe permitirse que ingrese el día de la semana en minúsculas o mayúsculas indistintamente. Como precondición se tiene que lo ingresado por el usuario tendrá la forma <[alfanumérico], [numérico]/[numérico]>. Una vez indicada la fecha, el usuario necesita poder indicar si ese día se tomaron exámenes, pero eso sólo si se trata de los niveles inicial, intermedio o avanzado, ya que las prácticas habladas y el inglés para viajeros no tienen exámenes. Si hubo exámenes, el usuario ingresará cuántos alumnos aprobaron y cuántos no, y el programa le mostrará el porcentaje de aprobados. Si el día fue el correspondiente a práctica hablada, el usuario deberá ingresar el porcentaje de asistencia a clase y el programa le indicará “asistió la mayoría” en caso de que la asistencia sea mayor al 50 % o “no asistió la mayoría” si no es así. Si se trata del inglés para viajeros y la fecha actual corresponde al día 1 del mes 1 o del mes 7, se deberá imprimir “Comienzo de nuevo ciclo” y solicitar al usuario que ingrese la cantidad de alumnos del nuevo ciclo y el arancel en $ por cada alumno, para luego imprimir el ingreso total en $.
+
+### Diagrama de Flujo
+
+```mermaid
+graph TD
+    A([Inicio]) --> B[/Leer entrada 'dia, DD/MM'/]
+    B --> C["dia_str, fecha_str = entrada.split(',')<br/>dia = dia_str.strip().lower()<br/>DD, MM = fecha_str.strip().split('/')<br/>d = int(DD), m = int(MM)"]
+    C --> D{"¿dia not in dias_validos<br/>OR d < 1 OR d > 31<br/>OR m < 1 OR m > 12?"}
+    D -- Sí --> E[/Imprimir 'Se produjo un error'/]
+    E --> Z([Fin])
+    D -- No --> F{"¿dia in ['lunes', 'martes', 'miercoles']?"}
+    F -- Sí --> G[/Preguntar: '¿Hubo exámenes? s/n'/]
+    G --> H{"¿hubo_examen == 's'?"}
+    H -- Sí --> I[/Leer aprobados y no_aprobados/]
+    I --> J["total = aprobados + no_aprobados<br/>porcentaje = (aprobados / total) * 100"]
+    J --> K[/Imprimir porcentaje de aprobados/]
+    H -- No --> Z
+    K --> Z
+    F -- No --> L{"¿dia == 'jueves'?"}
+    L -- Sí --> M[/Leer porcentaje_asistencia/]
+    M --> N{"¿porcentaje_asistencia > 50?"}
+    N -- Sí --> O[/Imprimir 'asistió la mayoría'/]
+    N -- No --> P[/Imprimir 'no asistió la mayoría'/]
+    O --> Z
+    P --> Z
+    L -- No --> Q{"¿dia == 'viernes'?"}
+    Q -- Sí --> R{"¿(d == 1 AND m == 1) OR (d == 1 AND m == 7)?"}
+    R -- Sí --> S[/Imprimir 'Comienzo de nuevo ciclo'/]
+    S --> T[/Leer cantidad_alumnos y arancel/]
+    T --> U["ingreso_total = cantidad_alumnos * arancel"]
+    U --> V[/Imprimir ingreso_total/]
+    V --> Z
+    R -- No --> Z
+    Q -- No --> Z
+```
+
+---
