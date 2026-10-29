@@ -30,6 +30,16 @@ def invertir_cadena(texto):
     else:
         return texto[::-1] #Usamos slicing para retornar la cadena invertida (inicio:fin:paso) y el paso es -1 para recorrer la cadena de derecha a izquierda
     
+#Ejercicio 5: Acumulador funcion max()
+def maximo(lista):
+    if not lista:
+        return print("\nLa lista esta vacia") #Si la lista esta vacia, se retorna un mensaje
+    else:
+        maximo = lista[0] #Ponemos el primer elemento dentro de la. lista como el maximo
+        for i in lista: #Recorremos la lista
+            if i > maximo: #Si el elemento es mayor a maximo, entonces se actualiza el maximo
+                maximo = i
+        return maximo #Retornamos el maximo
 
 lista = [0,1,2,3,4,5,6]
 resultados = [factorial(n) for n in lista] #Una forma mas chevere de escribir el ciclo for
@@ -37,3 +47,4 @@ print("\nFactoriales:", resultados)
 print("\nLista con pares elevados al cuadrado:", ElevaPares(lista.copy())) #Hacemos una copia de la lista para no modificar el puntero original
 print("\nSuma recursiva de la lista:", suma_recursiva(lista))
 print("\nCadena invertida:", invertir_cadena("Hola Mundo"))
+print("\nMaximo de la lista:", maximo(lista))
