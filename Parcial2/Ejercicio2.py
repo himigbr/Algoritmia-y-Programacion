@@ -21,8 +21,8 @@ def inversa(x):
 def potencia(base, exponente): 
     if base == 0 and exponente == 0: #Para evitar indeterminacion
         return "Error: 0^0 no esta definido"
-    if exponente % 1 != 0: #Para evitar el calculo con exponentes no enteros
-        return "Error: La calculadora solo soporta exponentes enteros"
+    if exponente % 1 != 0: 
+        return base ** exponente #Si el exponente no es entero, usamos la funcion de python para calcular la potencia
     resultado = 1
     if exponente < 0: #Para calcular la potencia de un numero con exponente negativo
         base = inversa(base) #calculamos la inversa de la base
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     print("Potencia: ", potencia(2,3)) #Debe dar 8
     print("Potencia con exponente negativo: ", potencia(2,-3)) #Debe dar 0.125
     print("Potencia con base y exponente cero: ", potencia(0,0)) #Debe dar error
-    print("Potencia con exponente no entero: ", potencia(2,0.5)) #Debe dar error
+    print("Potencia con exponente no entero: ", potencia(2,0.5)) #Debe dar 0.5
     print("Raiz cuadrada: ", raiz_cuadrada(16)) #Debe dar 4
     print("Raiz cuadrada de un numero negativo: ", raiz_cuadrada(-16)) #Debe dar error
     print("Raiz cuadrada de cero: ", raiz_cuadrada(0)) #Debe dar 0
