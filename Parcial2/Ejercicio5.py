@@ -54,7 +54,7 @@ def jugar(intentos):
 
     print(f"Lo sentimos, no has adivinado la frecuencia secreta: {FrecSec} Hz")
     resultado = False 
-    return resultado, intentojuego
+    return resultado, intentojuego #Devolvemos el resultado y el numero de intentos para guardarlos en el historial
 
 def guardar_historial(resultado, intentos):
     '''Para esta funcion usamos with para que el archivo solo se abra y se cierre cuando se ejecute la funcion,
