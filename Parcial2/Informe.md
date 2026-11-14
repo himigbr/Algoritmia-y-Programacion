@@ -43,22 +43,24 @@ Dentro de este se deben definir las variables y características propias de ese 
 
 ### Ejercicio 1
 
-
+Para el primer ejercicio, usamos principalmente una función de la librería random para obtener los datos de la subestación, como una forma de simularlos; usando funciones de Python nativas se pudieron obtener los extremos. Para el caso del promedio sumamos todos los valores de la lista y los dividimos en el largo de la lista, y por último, para sacar solo los valores por encima del promedio, primero reciclamos la función para hallar el promedio y después recorremos la lista con el condicional comparando uno a uno los valores de la lista y los devolvemos para usarlos en alguna variable.
 
 ### Ejercicio 2
 
-
+Para las funciones de suma, resta y multiplicación no fue algo muy complejo ya que usamos funciones nativas de Python; en cuanto a la división solo se agregó de más un condicional para evitar errores por división indefinida. Para el factorial sacamos un condicional que nos sirve para evitar operaciones indefinidas y usamos la recursividad de la misma función para reducir líneas y sacar el factorial fácilmente. En la inversa simplemente pasamos el número principal al denominador y además añadimos un condicional para evitar divisiones indefinidas. Para la potencia, reciclamos la función de multiplicación e iteramos en un ciclo for que nos permite multiplicar la base por las veces que se requiera basado en el exponente, pero solo con esto no fue suficiente ya que de ese modo no nos hubiera funcionado con decimales, así que añadimos la condición de que ese método solo funciona si el valor del número es módulo de 1 y, si no, entonces usamos la función nativa de Python para que nos resuelva el problema. En el caso de un exponente negativo, reciclamos la función para sacar las inversas y de nuevo usamos el ciclo for para multiplicar esas inversas las veces que sea necesario. Para la raíz cuadrada usamos el método de aproximación binaria que nos permite ir cerrando límites hasta aproximarnos lo más que podamos al valor de la raíz; vamos iterando y dependiendo de la condición del resultado vamos ajustando límites.
 
 ### Ejercicio 3
 
-
+Para este ejercicio es simplemente implementar el manejo de índices de los diccionarios, que recordemos que a diferencia de las listas estos funcionan con llaves que en este caso son los nombres de los componentes, pero hay algo curioso y es que el valor no solo es uno en este caso sino que son dos, así que mediante otro diccionario le añadimos atributos a esa llave del diccionario y simplemente con las claves podemos empezar a indexar y añadir, eliminar e incluso operar sobre los atributos.
 
 ### Ejercicio 4
 
-
+Para este ejercicio lo que necesitamos es iterar sobre los valores del diccionario para hacer las operaciones correspondientes; la gran ventaja es que los valores están en una lista y, al estar allí, es más fácil hacer operaciones con todos los valores sin necesidad de tener que iterar sobre las listas. Las iteraciones que se ven en el script son más que todo debido a la necesidad de sacar las llaves para mostrarlas en los resultados o cuando sea necesario. Cabe destacar que para las funciones que requieren de cálculos específicos, el promedio usado fue el ponderado para simular la hermosa universidad. Utilizamos además algunos índices para operar sobre los valores en los que había que hacer multiplicaciones u otras operaciones que se hayan requerido.
 
 ### Ejercicio 5
 
-
+Para este ejercicio lo primero fue importar la función randint que nos devuelve un número entero al azar dentro de un rango que se le especifique. Para la función de elegir la dificultad usamos condicionales que, dependiendo de la selección del usuario, devolverán el número de intentos según la dificultad. Usamos randint para generar nuestro número aleatorio y lo devolvemos para usarlo en otra función. Para la función jugar usamos un ciclo for que tiene como límite de iteraciones el valor que nos devuelve la función de elegir dificultad y empezamos a iterar sobre los valores que el usuario va ingresando, haciendo uso de condicionales para saber si el valor ingresado está por debajo o por encima de la frecuencia secreta. Para guardar el historial implementamos la función with que básicamente nos dice que con x condición haga determinada acción y nos sirve para no tener que cerrar manualmente el archivo de texto en este caso.
 
 ### Ejercicio 6
+
+En este ejercicio solo usamos dos funciones que nos cumplen todas las necesidades que se nos pide en el enunciado. La primera función nos identifica los ítems, se los enumera y se los muestra al usuario y, además de ello, recibe la entrada preguntando qué desea comprar; la función al final lo que hace es tomar el valor del producto seleccionado y lo devuelve para su posterior uso en la función de cobrar, la cual nos ayuda a verificar si lo que va a pagar el cliente es suficiente y, si así es, nos ayuda a saber cuánto hay que devolver, todo en una misma función.
