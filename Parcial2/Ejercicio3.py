@@ -10,30 +10,30 @@ de salir del programa.
 
 def agregar_componente(dic, name, cant, price):
     if name in dic:
-        dic[name]['cantidad'] += cant
-        dic[name]['precio'] = price
+        dic[name]['cantidad'] += cant #Indexamos el diccionario con el nombre del componente y accedemos a la llave cantidad para sumarle la cantidad ingresada
+        dic[name]['precio'] = price #Indexamos el diccionario con el nombre del componente y accedemos a la llave precio para actualizar el precio ingresado
     else:
-        dic[name] = {'cantidad': cant, 'precio': price}
+        dic[name] = {'cantidad': cant, 'precio': price} #Si el componente no existe, lo creamos con la cantidad y precio ingresados
 
 def eliminar_componente(dic, name):
     if name in dic:
-        del dic[name]
+        del dic[name] #Borramos mediante la llave del diccionario el componente ingresado
     else:
         print(f"El componete '{name}' no existe en el diccionario.") #Por si el componente no existe en el diccionario
 
 def calcular_valor_total(dic):
     total = 0
     for comp in dic.values(): #Recorremos los valores del diccionario y los vamos multiplicando y sumando al total
-        total += comp['cantidad'] * comp['precio']
-    return total
+        total += comp['cantidad'] * comp['precio'] #Multiplicamos la cantidad por el precio y lo sumamos al total
+    return total #Devolvemos el total del inventario
 
 def mostrar_inventario(dic):
     if not dic: #Por si el diccionario esta vacio
         return "el inventario esta vacio"
     inventario = "inventario:\n"
     for name, comp in dic.items(): #Recorremos el diccionario y vamos agregando los componentes al string inventario
-        inventario += f"{name}: Cantidad: {comp['cantidad']}, Precio: {comp['precio']}\n"
-    return inventario
+        inventario += f"{name}: Cantidad: {comp['cantidad']}, Precio: {comp['precio']}\n" #Usamos string formatting para mostrar el nombre del componente, la cantidad y el precio
+    return inventario #Devolvemos el string inventario para que pueda ser mostrado en pantalla
 
 #Funcionamiento principal
 if __name__ == "__main__":
